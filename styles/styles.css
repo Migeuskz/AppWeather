@@ -1,64 +1,118 @@
-body{
-    width: 95vw;
-    height: 95vh;
-    font-display: grid;
-    place-items: center;
-    background-image: url(../img/fondoMain.jpg);
-    background-size: cover;
-    /* background-color: aquamarine; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    justify-content: center;
+body {
+  width: 95vw;
+  height: 95vh;
+  font-display: grid;
+  place-items: center;
+  background-image: url(../img/fondoMain.jpg);
+  background-size: cover;
+  /* background-color: aquamarine; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
-.container{
+.container {
+  background-color: transparent;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.304), rgba(0, 0, 0, 0.354));
   display: flex;
   justify-content: space-around;
   margin: 1rem;
-  border: solid white;
+  /* border: solid white; */
   width: 45rem;
   height: 35rem;
   border-radius: 2rem;
 }
 
-.info{
-  border: solid white;
+.info {
+  /* border: solid white; */
+  color: white;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  width: 15rem;
-  height: 12rem;
+  width: 100%;
+  height: 100%rem;
+}
+
+form{
+  margin: 100rem;
+  /* border: solid white; */
+  font-size: 1.2rem;
+  margin: 2rem;
+}
+
+select{
+  appearance: none;
+  border-radius: 2rem;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.139), rgba(0, 0, 0, 0.354)); */
+  margin: 1rem;
+}
+
+button{
+  color: white;
+  background-color: indigo;
+  width: 3rem;
+  height: 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+}
+
+.icon{
+  color: aqua;
+  width: 1rem;
+}
+
+.info input{
+  appearance: none;
+  border-radius: 2rem;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.139), rgba(0, 0, 0, 0.354)); */
+  margin: 1rem;
+  width: 20rem;
+  height: 2rem;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: rgba(76, 0, 130, 0.541);
 }
 
 /* background climas */
 
 body.climaFrio {
-    /* Cambia esto al color de fondo que desees para el clima frío */
-    background-image: url(../img/frio.jpg);
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-  }
+  /* Cambia esto al color de fondo que desees para el clima frío */
+  background-image: url(../img/frio.jpg);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
 
-  body.climatemplado{
-    background-image: url(../img/templado.jpg);
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-  }
-  
-  body.climacalido{
-    background-image: url(../img/calido.jpg);
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-  }
+body.climatemplado {
+  background-image: url(../img/templado.jpg);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
 
-  body.climatehot {
-    /* Cambia esto al color de fondo que desees para el clima caluroso */
-    background-image: url(../img/calor.jpg);
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-  }
-  
-  body.climanublado{
-    background-image: url(../img/nublado.jpg);
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-  }
+body.climacalido {
+  background-image: url(../img/calido.jpg);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+body.climatehot {
+  /* Cambia esto al color de fondo que desees para el clima caluroso */
+  background-image: url(../img/calor.jpg);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+body.climanublado {
+  background-image: url(../img/nublado.jpg);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}

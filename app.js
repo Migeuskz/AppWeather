@@ -14,6 +14,26 @@ async function getWeather(lat, lon){
     updateDOM(weather.name, weather.main.temp);
 }
 
+async function getWeatherByCity(city){
+    const url = URLBASE + `q=${city}&appid=${APIKYE}`;
+    const weather = await request(url);
+    updateDOM(weather.name, weather.main.temp);
+}
+
+var button = document.querySelector('button');
+var input = document.querySelector('#ciudad');
+
+button.addEventListener('click', function() {
+    if (input.value !== '') {
+      getWeatherByCity(input.value);
+    } else {
+      alert('Por favor, ingresa una ciudad.');
+    }
+   });
+   
+
+
+
 function updateDOM(city, temp){
     //h2 de ciudad
     document.querySelector("h2").textContent= city;
@@ -25,24 +45,26 @@ function updateDOM(city, temp){
   }
   
 
-function updateBackground(temp){
-    if(temp < 10 ){
+  function updateBackground(temp){
+    let tempCelsius = (temp - 273.15).toFixed(1);
+    if(tempCelsius <= -10){
         //frio
         document.querySelector("body").className = "climaFrio";
-    } else if(temp > 15) {
-        //templado o calido
-        document.querySelector("body").className = "climacalido"
-    } else if( temp > 20){
+    } else if(tempCelsius < 15 && tempCelsius > -10){
+        //templado
+        document.querySelector("body").className = "climanublado";
+    } else if(tempCelsius >= 15 && tempCelsius < 20){
         //caliente
+        document.querySelector("body").className = "climacalido";
+    } else if(tempCelsius >= 20 && tempCelsius < 25){
+        //muy caliente
         document.querySelector("body").className = "climatemplado";
-    }else if(temp >= 25){
+    } else if(tempCelsius >= 25){
         //tropical
         document.querySelector("body").className = "climatehot";
-    }else if(temp < 15){
-        //nublado
-        document.querySelector("body").className = "climanublado";
     }
  }
+ 
 
 navigator.geolocation.getCurrentPosition((position => {
     const lat = position.coords.latitude;
